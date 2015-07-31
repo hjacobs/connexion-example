@@ -18,4 +18,4 @@ Running with Docker
 .. code-block:: bash
 
     $ docker build -t connexion-example .
-    $ docker run -it -p 8080:8080 connexion-exampl
+    $ docker run -it -p 8080:8080 connexion-example
