@@ -8,7 +8,7 @@ if [ ! -x "$HTTP" ]; then
     exit 1
 fi
 
-URL=http://localhost:8080
+URL=:8080
 
 set -x
 

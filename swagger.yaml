@@ -90,10 +90,13 @@ definitions:
         type: string
         description: Pet's name
         example: "Susie"
+        minLength: 1
+        maxLength: 100
       animal_type:
         type: string
         description: Kind of animal
         example: "cat"
+        minLength: 1
       tags:
         type: object
         description: Custom tags
