@@ -41,7 +41,7 @@ The example application only needs very few files:
 Running Locally
 ===============
 
-You can run the Python application directly on your local operation system:
+You can run the Python application directly on your local operating system:
 
 .. code-block:: bash
 
