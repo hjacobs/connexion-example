@@ -7,6 +7,25 @@ This example application implements a very basic "pet shop" REST service using t
 Connexion is a framework on top of Flask_ to automagically handle your REST API requests
 based on `Swagger 2.0 Specification`_ files in YAML.
 
+
+Features
+========
+
+This example application shows various features supported by the Connexion library:
+
+* mapping of REST operations to Python functions (using the ``operationId`` in ``swagger.yaml``)
+* bundled Swagger UI (served on `/ui/`_ path)
+* automatic JSON serialization for ``application/json`` content type
+* schema validation for the HTTP request body:
+
+  * required object properties
+  * primitive JSON types (string, integers, etc)
+  * date/time values
+  * string lengths
+
+* gevent WSGI server
+
+
 Files
 =====
 
@@ -31,6 +50,7 @@ You can run the Python application directly on your local operation system:
     $ xdg-open http://localhost:8080/ui/
     $ ./test.sh # do some test HTTP requests
 
+
 Running with Docker
 ===================
 
@@ -45,3 +65,4 @@ You can build the example application as a Docker image and run it:
 .. _Connexion: https://pypi.python.org/pypi/connexion
 .. _Flask: http://flask.pocoo.org/
 .. _Swagger 2.0 Specification: https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
+.. _/ui/: http://localhost:8080/ui/
