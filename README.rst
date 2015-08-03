@@ -24,6 +24,7 @@ This example application shows various features supported by the Connexion libra
   * string lengths
 
 * gevent WSGI server
+* OAuth2 protection
 
 
 Files
@@ -61,6 +62,16 @@ You can build the example application as a Docker image and run it:
     $ docker build -t connexion-example .
     $ docker run -d -p 8080:8080 connexion-example
     $ ./test.sh # do some test HTTP requests
+
+
+Using OAuth2 Security
+=====================
+
+To enable OAuth2 security (token verification), you need to pass the URL to the "tokeninfo" endpoint:
+
+.. code-block:: bash
+
+    $ docker run -d -p 8080:8080 -e HTTP_TOKENINFO_URL=https://auth.example.org/tokeninfo connexion-example
 
 .. _Connexion: https://pypi.python.org/pypi/connexion
 .. _Flask: http://flask.pocoo.org/

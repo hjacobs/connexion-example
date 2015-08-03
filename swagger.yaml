@@ -6,6 +6,10 @@ consumes:
   - application/json
 produces:
   - application/json
+security:
+  # enable OAuth protection for all REST endpoints
+  # (only active if the HTTP_TOKENINFO_URL environment variable is set)
+  - oauth2: [uid]
 paths:
   /pets:
     get:
@@ -107,3 +111,12 @@ definitions:
         example: "2015-07-07T15:49:51.230+02:00"
         readOnly: true
 
+
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: https://example.com/oauth2/dialog
+    x-tokenInfoUrl: "{{ tokeninfo_url if tokeninfo_url }}"
+    scopes:
+      uid: Unique identifier of the user accessing the service.
