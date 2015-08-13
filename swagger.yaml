@@ -33,10 +33,7 @@ paths:
       operationId: app.get_pet
       summary: Get a single pet
       parameters:
-        - name: pet_id
-          in: path
-          type: string
-          required: true
+        - $ref: '#/parameters/pet_id'
       responses:
         200:
           description: Return pet
@@ -49,10 +46,7 @@ paths:
       operationId: app.put_pet
       summary: Create or update a pet
       parameters:
-        - name: pet_id
-          in: path
-          type: string
-          required: true
+        - $ref: '#/parameters/pet_id'
         - name: body
           in: body
           schema:
@@ -67,16 +61,21 @@ paths:
       operationId: app.delete_pet
       summary: Remove a pet
       parameters:
-        - name: pet_id
-          in: path
-          type: string
-          required: true
+        - $ref: '#/parameters/pet_id'
       responses:
         204:
           description: Pet was deleted
         404:
           description: Pet does not exist
 
+
+parameters:
+  pet_id:
+    name: pet_id
+    description: Pet's Unique identifier
+    in: path
+    type: string
+    required: true
 
 definitions:
   Pet:

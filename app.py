@@ -5,6 +5,7 @@ import flask
 import logging
 import os
 
+from connexion import NoContent
 
 # our memory-only pet storage
 PETS = {}
@@ -30,16 +31,16 @@ def put_pet(pet_id):
         logging.info('Creating pet %s..', pet_id)
         pet['created'] = datetime.datetime.utcnow()
     PETS[pet_id] = pet
-    return None, (200 if exists else 201)
+    return NoContent, (200 if exists else 201)
 
 
 def delete_pet(pet_id):
     if pet_id in PETS:
         logging.info('Deleting pet %s..', pet_id)
         del PETS[pet_id]
-        return None, 204
+        return NoContent, 204
     else:
-        return None, 404
+        return NoContent, 404
 
 
 if __name__ == '__main__':
