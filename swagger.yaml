@@ -20,6 +20,7 @@ paths:
         - name: animal_type
           in: query
           type: string
+          pattern: "^[a-zA-Z0-9]*$"
       responses:
         200:
           description: Return pets
