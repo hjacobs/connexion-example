@@ -1,4 +1,4 @@
-FROM zalando/python:3.4.0-3
+FROM zalando/python:3.4.0-4
 
 COPY requirements.txt /
 RUN pip3 install -r /requirements.txt
