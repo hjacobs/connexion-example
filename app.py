@@ -13,7 +13,8 @@ PETS = {}
 
 def get_pets():
     animal_type = flask.request.args.get('animal_type')
-    return [pet for pet in PETS.values() if not animal_type or pet['animal_type'] == animal_type]
+    limit = int(flask.request.args.get('limit', 100))
+    return [pet for pet in PETS.values() if not animal_type or pet['animal_type'] == animal_type][:limit]
 
 
 def get_pet(pet_id):

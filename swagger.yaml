@@ -21,6 +21,10 @@ paths:
           in: query
           type: string
           pattern: "^[a-zA-Z0-9]*$"
+        - name: limit
+          in: query
+          type: integer
+          minimum: 0
       responses:
         200:
           description: Return pets

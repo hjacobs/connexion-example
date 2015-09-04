@@ -16,12 +16,14 @@ This example application shows various features supported by the Connexion libra
 * mapping of REST operations to Python functions (using the ``operationId`` in ``swagger.yaml``)
 * bundled Swagger UI (served on `/ui/`_ path)
 * automatic JSON serialization for ``application/json`` content type
-* schema validation for the HTTP request body:
+* schema validation for the HTTP request body and query parameters:
 
   * required object properties
   * primitive JSON types (string, integers, etc)
   * date/time values
   * string lengths
+  * minimum/maximum values
+  * regular expression patterns
 
 * gevent WSGI server
 * OAuth2 protection
