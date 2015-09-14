@@ -44,10 +44,15 @@ def delete_pet(pet_id):
         return NoContent, 404
 
 
+logging.basicConfig(level=logging.INFO)
+# the following line is only needed for OAuth support
+api_args = {'tokeninfo_url': os.environ.get('HTTP_TOKENINFO_URL')}
+app = connexion.App(__name__, port=8080, debug=True, server='gevent')
+app.add_api('swagger.yaml', arguments=api_args)
+# set the WSGI application callable to allow using uWSGI:
+# uwsgi --http :8080 -w app
+application = app.app
+
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
-    # the following line is only needed for OAuth support
-    api_args = {'tokeninfo_url': os.environ.get('HTTP_TOKENINFO_URL')}
-    app = connexion.App(__name__, port=8080, debug=True, server='gevent')
-    app.add_api('swagger.yaml', arguments=api_args)
+    # run our standalone gevent server
     app.run()

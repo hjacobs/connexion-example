@@ -75,7 +75,18 @@ To enable OAuth2 security (token verification), you need to pass the URL to the 
 
     $ docker run -d -p 8080:8080 -e HTTP_TOKENINFO_URL=https://auth.example.org/tokeninfo connexion-example
 
+Using Connexion with a WSGI container
+=====================================
+
+You can use the Flask WSGI app with any WSGI container, e.g. `using Flask with uWSGI`_:
+
+.. code-block:: bash
+
+    $ sudo pip3 install uwsgi
+    $ uwsgi --http :8080 -w app
+
 .. _Connexion: https://pypi.python.org/pypi/connexion
 .. _Flask: http://flask.pocoo.org/
 .. _Swagger 2.0 Specification: https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
 .. _/ui/: http://localhost:8080/ui/
+.. _using Flash with uWSGI: http://flask.pocoo.org/docs/latest/deploying/uwsgi/
