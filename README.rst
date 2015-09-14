@@ -89,4 +89,5 @@ You can use the Flask WSGI app with any WSGI container, e.g. `using Flask with u
 .. _Flask: http://flask.pocoo.org/
 .. _Swagger 2.0 Specification: https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
 .. _/ui/: http://localhost:8080/ui/
-.. _using Flash with uWSGI: http://flask.pocoo.org/docs/latest/deploying/uwsgi/
+.. _using Flask with uWSGI: http://flask.pocoo.org/docs/latest/deploying/uwsgi/
+
