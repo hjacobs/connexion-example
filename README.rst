@@ -85,9 +85,18 @@ You can use the Flask WSGI app with any WSGI container, e.g. `using Flask with u
     $ sudo pip3 install uwsgi
     $ uwsgi --http :8080 -w app
 
+You can run uwsgi with a large number of worker processes to get high concurrency.
+This obviously makes no sense for the in-memory pet store example (every worker would have its own pet store dictionary):
+
+.. code-block:: bash
+
+    $ uwsgi --http :8080 -w app -p 16  # use 16 worker processes
+
+See the `uWSGI documentation`_ for more information.
+
 .. _Connexion: https://pypi.python.org/pypi/connexion
 .. _Flask: http://flask.pocoo.org/
 .. _Swagger 2.0 Specification: https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
 .. _/ui/: http://localhost:8080/ui/
 .. _using Flask with uWSGI: http://flask.pocoo.org/docs/latest/deploying/uwsgi/
-
+.. _uWSGI documentation: https://uwsgi-docs.readthedocs.org/
