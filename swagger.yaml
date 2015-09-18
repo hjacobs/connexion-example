@@ -122,6 +122,5 @@ securityDefinitions:
     type: oauth2
     flow: implicit
     authorizationUrl: https://example.com/oauth2/dialog
-    x-tokenInfoUrl: "{{ tokeninfo_url if tokeninfo_url }}"
     scopes:
       uid: Unique identifier of the user accessing the service.

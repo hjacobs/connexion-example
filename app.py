@@ -3,7 +3,6 @@ import connexion
 import datetime
 import flask
 import logging
-import os
 
 from connexion import NoContent
 
@@ -45,10 +44,8 @@ def delete_pet(pet_id):
 
 
 logging.basicConfig(level=logging.INFO)
-# the following line is only needed for OAuth support
-api_args = {'tokeninfo_url': os.environ.get('HTTP_TOKENINFO_URL')}
-app = connexion.App(__name__, port=8080, debug=True, server='gevent')
-app.add_api('swagger.yaml', arguments=api_args)
+app = connexion.App(__name__, port=8080, server='gevent')
+app.add_api('swagger.yaml')
 # set the WSGI application callable to allow using uWSGI:
 # uwsgi --http :8080 -w app
 application = app.app
