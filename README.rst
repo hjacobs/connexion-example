@@ -14,6 +14,9 @@ Features
 This example application shows various features supported by the Connexion library:
 
 * mapping of REST operations to Python functions (using the ``operationId`` in ``swagger.yaml``)
+
+  * maps path, query and body parameters to keyword arguments
+
 * bundled Swagger UI (served on `/ui/`_ path)
 * automatic JSON serialization for ``application/json`` content type
 * schema validation for the HTTP request body and query parameters:
