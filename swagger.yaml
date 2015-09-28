@@ -52,7 +52,7 @@ paths:
       summary: Create or update a pet
       parameters:
         - $ref: '#/parameters/pet_id'
-        - name: body
+        - name: pet
           in: body
           schema:
             $ref: '#/definitions/Pet'

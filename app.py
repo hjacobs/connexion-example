@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import connexion
 import datetime
-import flask
 import logging
 
 from connexion import NoContent
@@ -19,9 +18,8 @@ def get_pet(pet_id):
     return pet or ('Not found', 404)
 
 
-def put_pet(pet_id):
+def put_pet(pet_id, pet):
     exists = pet_id in PETS
-    pet = flask.request.json
     pet['id'] = pet_id
     if exists:
         logging.info('Updating pet %s..', pet_id)
