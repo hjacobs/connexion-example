@@ -40,7 +40,7 @@ def delete_pet(pet_id):
 
 
 logging.basicConfig(level=logging.INFO)
-app = connexion.App(__name__, port=8080, server='gevent')
+app = connexion.App(__name__)
 app.add_api('swagger.yaml')
 # set the WSGI application callable to allow using uWSGI:
 # uwsgi --http :8080 -w app
@@ -48,4 +48,4 @@ application = app.app
 
 if __name__ == '__main__':
     # run our standalone gevent server
-    app.run()
+    app.run(port=8080, server='gevent')
