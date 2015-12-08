@@ -1,2 +1,2 @@
-connexion>=1.0.20
+connexion>=1.0.25
 gevent>=1.1b1
