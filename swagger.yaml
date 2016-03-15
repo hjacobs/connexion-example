@@ -8,7 +8,7 @@ produces:
   - application/json
 security:
   # enable OAuth protection for all REST endpoints
-  # (only active if the HTTP_TOKENINFO_URL environment variable is set)
+  # (only active if the TOKENINFO_URL environment variable is set)
   - oauth2: [uid]
 paths:
   /pets:
