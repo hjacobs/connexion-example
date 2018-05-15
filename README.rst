@@ -47,11 +47,11 @@ The example application only needs very few files:
 Running Locally
 ===============
 
-You can run the Python application directly on your local operating system:
+You can run the Python application directly on your local operating system (this requires Python 3 and `Pipenv <https://docs.pipenv.org/>`_):
 
 .. code-block:: bash
 
-    $ sudo pip3 install -r requirements.txt
+    $ pipenv install --dev && pipenv shell
     $ ./app.py # start the HTTP server
     $ xdg-open http://localhost:8080/ui/
     $ ./test.sh # do some test HTTP requests
