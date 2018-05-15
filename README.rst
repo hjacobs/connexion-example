@@ -39,7 +39,7 @@ The example application only needs very few files:
 
 * ``swagger.yaml``: the pet shop REST API Swagger definition
 * ``app.py``: implementation of the pet shop operations with in-memory storage
-* ``requirements.txt``: list of required Python libraries
+* ``Pipfile``: list of required Python libraries (used by Pipenv)
 * ``Dockerfile``: to build the example as a runnable Docker image
 * ``test.sh``: shell script to execute example HTTP requests against the pet shop API
 
