@@ -1,7 +1,9 @@
-FROM registry.opensource.zalan.do/stups/python:3.5.2-38
+FROM registry.opensource.zalan.do/stups/python:3.6.5-22
 
-COPY requirements.txt /
-RUN pip3 install -r /requirements.txt
+COPY Pipfile /
+COPY Pipfile.lock /
+
+RUN pipenv install --system --deploy --ignore-pipfile
 
 COPY app.py /
 COPY swagger.yaml /
