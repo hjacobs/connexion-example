@@ -2,6 +2,7 @@ swagger: '2.0'
 info:
   title: Pet Shop Example API
   version: "0.1"
+  description: Simple example API to store and retrieve pets
 consumes:
   - application/json
 produces:
@@ -24,15 +25,19 @@ paths:
         - name: limit
           in: query
           type: integer
+          format: int32
           minimum: 0
           default: 100
       responses:
         200:
           description: Return pets
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Pet'
+            type: object
+            properties:
+              pets:
+                type: array
+                items:
+                  $ref: '#/definitions/Pet'
   /pets/{pet_id}:
     get:
       tags: [Pets]

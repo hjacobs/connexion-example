@@ -10,7 +10,7 @@ PETS = {}
 
 
 def get_pets(limit, animal_type=None):
-    return [pet for pet in PETS.values() if not animal_type or pet['animal_type'] == animal_type][:limit]
+    return {"pets": [pet for pet in PETS.values() if not animal_type or pet['animal_type'] == animal_type][:limit]}
 
 
 def get_pet(pet_id):
