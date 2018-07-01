@@ -7,6 +7,8 @@ This example application implements a very basic "pet shop" REST service using t
 Connexion is a framework on top of Flask_ to automagically handle your REST API requests
 based on `Swagger 2.0 Specification`_ files in YAML.
 
+ 👉 Please also have a look at the [Connexion Example with Redis database and Kubernetes deployment manifests](https://github.com/hjacobs/connexion-example-redis-kubernetes).
+
 
 Features
 ========
